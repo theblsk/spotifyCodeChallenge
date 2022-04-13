@@ -9,7 +9,6 @@ const getArtists = require("./getArtists");
 const getAlbums = require("./getAlbums");
 
 app.get("/", function (req, res) {
-  console.log(process.env)
   res.send("Hello World");
 });
 app.post("/getToken", function (req, res) {
