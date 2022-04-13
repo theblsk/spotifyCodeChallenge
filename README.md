@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# Guide to Running this App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+First of all, the node_modules has been ignored, so you should "npm i" as a first step.
 
-## Available Scripts
+Second, when npm i runs sucessfully (please make sure internet didn't ruin it), you should go ahead and go to the server folder in the src folder and run "node server.js", so the proxy bakend API runs.
 
-In the project directory, you can run:
+Third, go back to src folder and run "yarn start", or "npm start", to run the app, then open a localhost:3000 and the App should be there.
 
-### `npm start`
+Have fun and do your best trying to break it, I dare you.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Specifications for the APP
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+I have made the proxy API, for security reasons so that we can store the retreived token in the ENVIRONMENT variables, to make it hidden.
 
-### `npm test`
+THe Implicit Grant flow itself is not secure, for example there were no way to hide the App Secret, so I had to put it directly in the Frontend, and the token receipt is hardcoded in the redirect link, which is not secure at all, but I managed it and deleted it from the link while sucessfully storing it for use in the API proxy I made.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I have used bootstrap for the Navbar (it is simple), and used bootstrap to make it faster to make the Grid where the Artists and Albums are shown, although it is worth noting that I can make the grid from scratch if ever needed, I just chose to save time and have the same result.
 
-### `npm run build`
+Everything else about the design is made from scratch following the wireframe exactly. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I also implemented the search as you go feature, it actually is really easy and I coupled it with the debounce function just to prevent bombarding the api on every key change. (runs only when you stop typing in the search bar)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I have implemented a persisted version of Redux Store, the API receipts are stored there, the ID of the artist, and the Name of the Artist to facilitate the code.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
