@@ -1,0 +1,30 @@
+.navbar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9;
+    background-color: transparent;
+    box-shadow: 0 0 1rem var(--lightGreen);
+    border-radius: 0 0 25px 25px;
+}
+.navbar-brand{
+    color: white;
+
+}
+span.h1{
+    margin: 0;
+    font-size: clamp(0.8rem,0.6rem + 3vw,1.5rem);
+
+}
+
+
+@media only screen and (max-width: 350px)
+{
+    #forceCenter{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}

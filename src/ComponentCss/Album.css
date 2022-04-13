@@ -1,0 +1,71 @@
+.album{
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    box-shadow: 0 0 0.5rem white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    animation: animate 400ms ease-in-out forwards;
+}
+.artistAlbums{
+    padding-top: 10px;
+}
+.albumImageContainer {
+
+    width: 100%;
+    height: 55%;
+}
+
+.albumImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px 25px 0 0 ;
+    object-fit: cover;
+}
+.details{
+    height: 45%;
+    width: 100%;
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.up h1 {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(0.8rem, 0.6rem + 3vw, 1.2rem);
+}
+.up{
+    width: 100%;
+    height: 100%;
+}
+.down{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dateTracks{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.preview{
+    border: 1px white solid;
+    border-radius: 25px;
+    text-align: center;
+
+}
+.preview a{
+    text-decoration: none;
+    color: white;
+}
+.preview a:hover{
+    color: white;
+}

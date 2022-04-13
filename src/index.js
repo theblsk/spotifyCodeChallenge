@@ -1,14 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-ReactDOM.render(
-  <React.StrictMode>
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import { debounce } from "debounce";
+import { loadState, saveState } from "./localStorage";
+import rootReducer from "./reducers/rootReducer";
+
+var persistedState = loadState();
+
+const store = createStore(rootReducer, persistedState);
+
+store.subscribe(
+  debounce(() => {
+    saveState(store.getState());
+  }),
+  200
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

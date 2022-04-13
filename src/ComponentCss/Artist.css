@@ -1,0 +1,70 @@
+.artist {
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    box-shadow: 0 0 0.5rem white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    animation: animate 400ms ease-in-out forwards;
+}
+
+
+.artistImageContainer {
+
+    width: 100%;
+    height: 65%;
+}
+
+.artistImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px 25px 0 0 ;
+    object-fit: cover;
+}
+
+.detailsContainer {
+    height: 35%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.artistName {
+
+    width: 100%;
+
+}
+
+.artistName h1 {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(0.8rem, 0.6rem + 3vw, 1.2rem);
+    padding: 4px;
+}
+
+.artistFollowers {
+
+    width: 100%;
+}
+
+.artistFollowers span {
+    padding: 4px;
+}
+
+
+@keyframes animate{
+    from{
+        transform: translateX(20%);
+        opacity: 0;
+
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

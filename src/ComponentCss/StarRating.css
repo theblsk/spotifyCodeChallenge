@@ -1,0 +1,18 @@
+#starButton {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding-inline: 2px;
+}
+
+.on {
+    color: gold;
+}
+
+.off {
+    color: #ccc;
+}
+.star-rating{
+    margin: 4px;
+}

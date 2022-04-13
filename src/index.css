@@ -1,13 +1,23 @@
+@font-face {
+  font-family: comforta;
+  src: url(./assets/fonts/comforta.ttf);
+}
+
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: comforta;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --darkGreen: #1db954;
+  --lightGreen: #1ed760;
+  --white: #ffffff;
+  --black: #191414;
 }
