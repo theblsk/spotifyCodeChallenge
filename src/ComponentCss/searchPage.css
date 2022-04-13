@@ -36,6 +36,20 @@
     padding-top: 10px;
     overflow-y: scroll; 
 }
+/* .searchResultContainer::-webkit-scrollbar{
+    width: 1vw;
+    border-radius: 100vw;
+}
+.searchResultContainer::-webkit-scrollbar-track{
+    background-color: var(--white);
+    border-color: var(--lightGreen);
+    border-radius: 100vw;
+
+}
+.searchResultContainer::-webkit-scrollbar-thumb{
+    background-color: var(--darkGreen);
+    border-radius: 100vw;
+} */
 .spacer {
     margin-bottom: 30px;
     text-decoration: none;
