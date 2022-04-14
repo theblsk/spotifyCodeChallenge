@@ -1,7 +1,6 @@
 .pageDivider{
-    margin-top: 4vh;
     width: 100%;
-    height: 95vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +9,7 @@
 }
 .artistInfo{
     width: 100%;
-    height: 20%;
+    height: 30%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
