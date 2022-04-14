@@ -20,5 +20,5 @@ Everything else about the design is made from scratch following the wireframe ex
 
 I also implemented the search as you go feature, it actually is really easy and I coupled it with the debounce function just to prevent bombarding the api on every key change. (runs only when you stop typing in the search bar)
 
-I have implemented a persisted version of Redux Store, the API receipts are stored there, the ID of the artist, and the Name of the Artist to facilitate the code.
+I have implemented a persisted version of Redux Store (where the store is sotred in the browser localStorage), the API receipts are stored there, the ID of the artist, and the Name of the Artist to facilitate the code.
 
