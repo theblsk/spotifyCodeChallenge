@@ -27,6 +27,11 @@ const rootReducer = (state = initState, action) => {
         ...state,
         name: action.name,
       };
+    case "LOG_TOKEN":
+      return {
+        ...state,
+        token: action.token,
+      };
     default:
       return state;
   }

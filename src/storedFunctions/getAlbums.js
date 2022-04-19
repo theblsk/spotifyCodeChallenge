@@ -2,16 +2,22 @@ var axios = require('axios');
 
 
 
-const getAlbums = async (id) => {
+
+const getAlbums = async (id, token) => {
     var config = {
         method: 'get',
-        url: `http://localhost:3333/getAlbums?id=${id}`,
-        headers: { }
+        url: `https://api.spotify.com/v1/artists/${id}/albums`,
+        headers: { 
+          'Authorization': `Bearer ${token}`
+        }
       };
-      
-      var receipt = await axios(config)
-      return receipt
+      try{
+        const response = await axios(config)
+        return response.data
+      }
+      catch (err){
+          console.log("an error happened")
+      }
 }
-
 
 module.exports = getAlbums

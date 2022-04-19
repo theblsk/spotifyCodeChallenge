@@ -15,13 +15,14 @@ const SearchPage = (props) => {
 
 
   useEffect(() => {
-    storeHash();
+    storeHash(props.logToken);
   }, []);
 
   useEffect(() => {
-    getArtists(searchTerm).then((data) => {
-      if (data.data) {
-        logArtists(data.data.artists.items);
+    if (searchTerm !== '')
+    getArtists(props.token, searchTerm).then((data) => {
+      if (data.artists.items) {
+        logArtists(data.artists.items);
       } else {
         console.log("type something please");
       }
@@ -69,13 +70,16 @@ const SearchPage = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  return { artistList: state.artistApiResponse };
+  return { artistList: state.artistApiResponse, token: state.token };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     logArtists: (entry) => {
       dispatch({ type: "LOG_ARTISTS", receipt: entry });
     },
+    logToken: (entry) => {
+      dispatch({ type: "LOG_TOKEN", token: entry });
+    }
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);

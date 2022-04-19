@@ -11,8 +11,8 @@ const AlbumPage = (props) => {
   const navigate = useNavigate()
   const [albums, setAlbums] = useState(null);
   useEffect(() => {
-    getAlbums(props.artistId).then((data) => {
-      props.logAlbums(data.data.items);
+    getAlbums(props.artistId, props.token).then((data) => {
+      props.logAlbums(data.items);
     });
   }, []);
   useEffect(() => {
@@ -60,6 +60,7 @@ const mapStateToProps = (state) => {
     artistAlbums: state.artistAlbums,
     artistId: state.artistId,
     name: state.name,
+    token: state.token
   };
 };
 const mapDispatchToProps = (dispatch) => {

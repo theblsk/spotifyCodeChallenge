@@ -16,7 +16,11 @@ const store = createStore(rootReducer, persistedState);
 
 store.subscribe(
   debounce(() => {
-    saveState(store.getState());
+    saveState({
+      token: store.getState().token,
+      name: store.getState().name,
+      artistId: store.getState().artistId,
+    });
   }),
   200
 );
