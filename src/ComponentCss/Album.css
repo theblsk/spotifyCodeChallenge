@@ -8,9 +8,7 @@
     border-radius: 25px;
     animation: animate 400ms ease-in-out forwards;
 }
-.artistAlbums{
-    padding-top: 10px;
-}
+
 .albumImageContainer {
 
     width: 100%;
