@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import getAlbums from "../storedFunctions/getAlbums";
 import { useNavigate } from "react-router-dom";
 const AlbumPage = (props) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [albums, setAlbums] = useState(null);
   useEffect(() => {
     getAlbums(props.artistId, props.token).then((data) => {
@@ -38,19 +38,20 @@ const AlbumPage = (props) => {
   return (
     <React.Fragment>
       <div className="pageDivider">
-
         <div className="artistInfo">
           <div className="artist-name">
             <h1>{props.name}</h1>
-            <button onClick={()=>{
-              navigate('../search')
-            }}><i className="bi bi-arrow-left-circle-fill"></i></button>
+            <button
+              onClick={() => {
+                navigate("../search");
+              }}
+            >
+              <i className="bi bi-arrow-left-circle-fill"></i>
+            </button>
           </div>
           <span>Albums</span>
         </div>
-        <div className="artistAlbums">
-          <div className="row">{albums}</div>
-        </div>
+        <div className="artistAlbums">{albums}</div>
       </div>
     </React.Fragment>
   );
@@ -60,7 +61,7 @@ const mapStateToProps = (state) => {
     artistAlbums: state.artistAlbums,
     artistId: state.artistId,
     name: state.name,
-    token: state.token
+    token: state.token,
   };
 };
 const mapDispatchToProps = (dispatch) => {

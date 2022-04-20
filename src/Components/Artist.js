@@ -9,7 +9,7 @@ const Artist = (props) => {
   const dispatch = useDispatch()
   return (
     <React.Fragment>
-      <div className="col-md-4 spacer">
+      <div className="spacer">
         <div className="artist">
           <div className="artistImageContainer" onClick={()=>{
             dispatch({type: "LOG_ID", id: props.idPass})

@@ -13,20 +13,19 @@ const SearchPage = (props) => {
   const [artists, setArtists] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-
   useEffect(() => {
     storeHash(props.logToken);
   }, []);
 
   useEffect(() => {
-    if (searchTerm !== '')
-    getArtists(props.token, searchTerm).then((data) => {
-      if (data.artists.items) {
-        logArtists(data.artists.items);
-      } else {
-        console.log("type something please");
-      }
-    });
+    if (searchTerm !== "")
+      getArtists(props.token, searchTerm).then((data) => {
+        if (data.artists.items) {
+          logArtists(data.artists.items, searchTerm);
+        } else {
+          console.log("type something please");
+        }
+      });
   }, [searchTerm]);
   useEffect(() => {
     if (props.artistList) {
@@ -61,9 +60,7 @@ const SearchPage = (props) => {
           />
           <i className="bi bi-search"></i>
         </div>
-        <div className="container searchResultContainer">
-          <div className="row">{artists}</div>
-        </div>
+        <div className="searchResultContainer">{artists}</div>
       </div>
     </React.Fragment>
   );
@@ -74,12 +71,12 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    logArtists: (entry) => {
-      dispatch({ type: "LOG_ARTISTS", receipt: entry });
+    logArtists: (entry, search) => {
+      dispatch({ type: "LOG_ARTISTS", receipt: entry, searchTrm: search });
     },
     logToken: (entry) => {
       dispatch({ type: "LOG_TOKEN", token: entry });
-    }
+    },
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);

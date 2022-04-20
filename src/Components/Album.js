@@ -1,22 +1,12 @@
 import React from "react";
 import "../ComponentCss/Album.css";
 const Album = (props) => {
-
-
-
-
-
-
   return (
     <React.Fragment>
-      <div className="col-md-4 spacer">
+      <div className="spacer">
         <div className="album">
           <div className="albumImageContainer">
-            <img
-              src={props.image}
-              alt="Not Found"
-              className="albumImage"
-            />
+            <img src={props.image} alt="Not Found" className="albumImage" />
           </div>
           <div className="details">
             <div className="up">
@@ -29,7 +19,11 @@ const Album = (props) => {
                 <span>{props.albumTrackCount} Tracks</span>
               </div>
               <div className="preview">
-                <span><a href={props.albumLink} target="_blank" rel="noreferrer">Preview on Spotify</a></span>
+                <span>
+                  <a href={props.albumLink} target="_blank" rel="noreferrer">
+                    Preview on Spotify
+                  </a>
+                </span>
               </div>
             </div>
           </div>
@@ -37,6 +31,6 @@ const Album = (props) => {
       </div>
     </React.Fragment>
   );
-}
+};
 
 export default Album;

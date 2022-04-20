@@ -7,12 +7,15 @@ const rootReducer = (state = initState, action) => {
   switch (action.type) {
     case "LOG_ARTISTS":
       let receipt = action.receipt;
+      let searchTrm = action.searchTrm.toLowerCase()
+      let filtered = receipt.filter(item =>item.name.toLowerCase().includes(searchTrm))
       return {
         ...state,
-        artistApiResponse: receipt,
+        artistApiResponse: filtered,
       };
     case "LOG_ALBUMS":
       let albumReceipt = action.receipt;
+    
       return {
         ...state,
         artistAlbums: albumReceipt,
